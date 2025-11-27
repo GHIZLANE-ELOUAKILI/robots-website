@@ -1,0 +1,3998 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أصدقائي الروبوتات - عالم مدهش للأطفال</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #3A6EA5;
+            --secondary-orange: #FF9A3D;
+            --accent-green: #A7D489;
+            --light-gray: #F5F7FA;
+            --bg-main: var(--light-gray);
+            --btn-primary: var(--primary-blue);
+            --accent-secondary: var(--secondary-orange);
+            --text-base: #4A5568;
+            --heading-color: var(--primary-blue);
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --card-bg: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #3A6EA5 0%, #5A8FC9 100%);
+            --gradient-secondary: linear-gradient(135deg, #FF9A3D 0%, #FFB366 100%);
+            --gradient-accent: linear-gradient(135deg, #A7D489 0%, #C5E8B7 100%);
+            --shadow: 0 8px 20px var(--shadow-color);
+            --transition: all 0.4s ease;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --animation-duration: 0.6s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Baloo Bhaijaan 2', cursive;
+            line-height: 1.6;
+            color: var(--text-base);
+            background-color: var(--bg-main);
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        body.arabic {
+            direction: rtl;
+            text-align: right;
+        }
+
+        body.french {
+            direction: ltr;
+            text-align: left;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+            color: var(--heading-color);
+            transition: var(--transition);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        h2:hover {
+            transform: translateY(-3px);
+        }
+
+        body.arabic h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            right: 0;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-secondary);
+            border-radius: 4px;
+        }
+
+        body.french h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-secondary);
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-base);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            animation: rotate 10s linear infinite;
+        }
+
+        body.french .logo-icon {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 12px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-base);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            background: rgba(58, 110, 165, 0.08);
+            border-radius: 30px;
+            padding: 5px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            color: var(--text-base);
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(58, 110, 165, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--text-base);
+            cursor: pointer;
+        }
+/* Robot Types with Images */
+.robot-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.robot-type {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.robot-type:hover {
+    transform: translateY(-8px);
+    border-color: var(--secondary-orange);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.robot-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid var(--primary-blue);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.robot-type:hover .robot-image {
+    transform: scale(1.1);
+    border-color: var(--secondary-orange);
+}
+
+.robot-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.robot-type:hover .robot-image img {
+    transform: scale(1.1);
+}
+
+.robot-type i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: white;
+    transition: var(--transition);
+}
+
+.robot-type:hover i {
+    transform: scale(1.1);
+}
+
+.robot-type h4 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+}
+
+.robot-type p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-base);
+    margin-bottom: 0;
+}
+
+/* Fallback for missing images */
+.robot-image .placeholder-icon {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .robot-types {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .robot-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .robot-type i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .robot-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .robot-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .robot-type i {
+        font-size: 2rem;
+    }
+}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-image: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.85;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 50%;
+            color: white;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            color: white;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Floating Robots Animation */
+        .floating-robots {
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-robot {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.4);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .robot-1 {
+            top: 15%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .robot-2 {
+            top: 45%;
+            right: 5%;
+            animation-delay: 2s;
+        }
+
+        .robot-3 {
+            top: 65%;
+            right: 15%;
+            animation-delay: 4s;
+        }
+
+        .robot-4 {
+            top: 30%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .robot-5 {
+            top: 75%;
+            right: 8%;
+            animation-delay: 3s;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .info-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: var(--transition);
+        }
+
+        .info-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .info-card p {
+            font-size: 1rem;
+        }
+
+        /* Images Grid */
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .image-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: white;
+        }
+
+        .image-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .image-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-caption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Applications */
+        .applications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .application {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .application:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-accent);
+        }
+
+        body.french .application:before {
+            left: auto;
+            right: 0;
+        }
+
+        .application:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .application h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .application i {
+            color: var(--primary-blue);
+            margin-left: 10px;
+            font-size: 1.6rem;
+            transition: var(--transition);
+        }
+
+        .application:hover i {
+            transform: scale(1.1);
+        }
+
+        body.french .application i {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        /* Images Section */
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-thumbnail {
+            height: 180px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-thumbnail i {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .image-card:hover .image-thumbnail i {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .image-info {
+            padding: 20px;
+        }
+
+        .image-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Robot Image in Introduction Section */
+        .intro-with-image {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: subtle-float 4s ease-in-out infinite;
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.02);
+            animation: subtle-float-hover 2s ease-in-out infinite;
+        }
+
+        /* Robot Types Section */
+        .robot-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .robot-type {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .robot-type:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-orange);
+        }
+
+        .robot-type i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .robot-type:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Historical Section */
+        .historical-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .historical-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .historical-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .historical-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            border-right: 4px solid var(--secondary-orange);
+            transition: var(--transition);
+        }
+
+        .historical-item:hover {
+            transform: translateX(5px);
+        }
+
+        .historical-image {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .historical-image i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .historical-content {
+            flex: 1;
+        }
+
+        .historical-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .quiz-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .quiz-option {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            padding: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .quiz-option:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-option.selected {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .quiz-feedback {
+            margin-top: 25px;
+            padding: 18px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            background: rgba(167, 212, 137, 0.2);
+            color: var(--primary-blue);
+            border: 2px solid var(--accent-green);
+        }
+
+        .quiz-feedback.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            color: #991b1b;
+            border: 2px solid #ef4444;
+        }
+
+        .challenge-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .fun-fact {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            border: 2px dashed var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .fun-fact:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-orange);
+        }
+
+        .fun-fact i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-orange);
+            transition: var(--transition);
+        }
+
+        .fun-fact:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Project Section */
+        .project-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .project-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .project-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-orange);
+            transition: var(--transition);
+        }
+
+        .project-step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Career Section */
+        .career-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .career-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .engineer-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Educational Games */
+        .educational-game {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .educational-game:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+
+        .robot-parts-game {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .parts-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .robot-part {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            cursor: grab;
+            transition: var(--transition);
+            border: 2px dashed var(--primary-blue);
+        }
+
+        .robot-part:hover {
+            transform: scale(1.05);
+            border-color: var(--secondary-orange);
+        }
+
+        .robot-part i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .robot-assembly {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--primary-blue);
+            position: relative;
+        }
+
+        .robot-assembly .robot-slot {
+            width: 80px;
+            height: 80px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .robot-assembly .robot-slot.filled {
+            border-color: var(--accent-green);
+            background-color: rgba(167, 212, 137, 0.2);
+        }
+
+        .robot-assembly .robot-slot .slot-label {
+            position: absolute;
+            bottom: -25px;
+            font-size: 0.8rem;
+            color: var(--text-base);
+        }
+
+        .robot-assembly-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .matching-game {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .match-card {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .match-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        .match-card.selected {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .match-card.selected i {
+            color: white;
+        }
+
+        .match-card.matched {
+            background: var(--accent-green);
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes subtle-float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subtle-float-hover {
+            0% {
+                transform: scale(1.02) translateY(0);
+            }
+            50% {
+                transform: scale(1.02) translateY(-5px);
+            }
+            100% {
+                transform: scale(1.02) translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes robot-move {
+            0% {
+                transform: translateY(-50%) translateX(0);
+            }
+            25% {
+                transform: translateY(-50%) translateX(-10px);
+            }
+            50% {
+                transform: translateY(-50%) translateX(0);
+            }
+            75% {
+                transform: translateY(-50%) translateX(10px);
+            }
+            100% {
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(255, 154, 61, 0.4);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Robot Voice Assistant */
+        .robot-voice {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .voice-popup {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            width: 300px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 15px;
+            z-index: 100;
+            display: none;
+        }
+
+        .voice-popup.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .voice-message {
+            margin-bottom: 10px;
+        }
+
+        .voice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .voice-option {
+            padding: 8px 12px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .voice-option:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Game Stats */
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--gradient-secondary);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .robot-part-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-orange);
+            display: none;
+        }
+
+        .robot-part-info.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .educational-game-instructions {
+            background: rgba(58, 110, 165, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-right: 4px solid var(--primary-blue);
+        }
+
+        .educational-game-instructions h4 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .matching-game-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Timeline for Robot History */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: var(--gradient-primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-orange);
+            border: 4px solid var(--primary-blue);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -13px;
+        }
+
+        .right::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* New Section: What are robots and how do they work */
+        .robots-explained {
+            margin: 40px 0;
+        }
+
+        .explanation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .explanation-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .explanation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .explanation-card:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Interactive Robot Demo */
+        .robot-demo {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .robot-demo:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .demo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .robot-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .control-btn {
+            background: var(--bg-main);
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .control-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .robot-visual {
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .robot-visual i {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .robot-status {
+            text-align: center;
+            padding: 15px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-orange);
+        }
+
+        /* Robot Gallery */
+        .robot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image {
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-image i {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* أنماط إضافية للاختبارات */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quiz-question {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-blue);
+        }
+        
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .quiz-option {
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            text-align: right;
+        }
+        
+        .quiz-option:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quiz-option.selected {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        
+        .quiz-option.correct {
+            background: var(--accent-green);
+            color: white;
+            border-color: var(--accent-green);
+        }
+        
+        .quiz-option.incorrect {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+        
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            display: none;
+        }
+        
+        .quiz-feedback.correct {
+            background: rgba(167, 212, 137, 0.2);
+            color: var(--primary-blue);
+            border: 2px solid var(--accent-green);
+        }
+        
+        .quiz-feedback.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            color: #991b1b;
+            border: 2px solid #ef4444;
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .quiz-results {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: var(--shadow);
+            display: none;
+        }
+        
+        .results-score {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .results-message {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        .progress-container {
+            margin: 30px 0;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: var(--light-gray);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--gradient-secondary);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .question-counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        
+        .quiz-instructions {
+            background: rgba(58, 110, 165, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-right: 4px solid var(--primary-blue);
+        }
+
+        /* أنماط إضافية لمعرض الصور */
+        .robots-gallery {
+            margin: 40px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-info {
+            padding: 25px;
+        }
+        
+        .gallery-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .gallery-info p {
+            color: var(--text-base);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .robot-category {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .image-placeholder {
+            background: var(--gradient-primary);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .upload-instructions {
+            background: rgba(58, 110, 165, 0.05);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .upload-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(58, 110, 165, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+                transform: translateX(100%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+                width: 100%;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 8px 0;
+                font-size: 1.1rem;
+            }
+            
+            .controls {
+                margin-top: 12px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .content-section, .quiz-section, .historical-section, .project-section, .career-section, .educational-game, .robot-demo {
+                padding: 30px 20px;
+            }
+            
+            .info-cards, .applications, .robot-types, .fun-facts, .explanation-cards, .robot-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro-with-image {
+                flex-direction: column;
+            }
+            
+            .intro-image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+            
+            .historical-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .historical-image {
+                align-self: center;
+            }
+            
+            .robot-parts-game {
+                grid-template-columns: 1fr;
+            }
+            
+            .matching-game {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .engineer-skills {
+                grid-template-columns: 1fr;
+            }
+            
+            .robot-controls {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0;
+            }
+            
+            /* تعديلات الروبوتات للشاشات الصغيرة */
+            .floating-robots {
+                width: 30%;
+            }
+            
+            .floating-robot {
+                font-size: 1.2rem;
+            }
+            
+            .hero-content {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-robot {
+                display: none;
+            }
+            
+            .robot-1 {
+                top: 10%;
+                right: 5%;
+            }
+            
+            .robot-2 {
+                top: 40%;
+                right: 2%;
+            }
+            
+            .robot-3 {
+                top: 60%;
+                right: 10%;
+            }
+            
+            .robot-4 {
+                top: 25%;
+                right: 15%;
+            }
+            
+            .robot-5 {
+                top: 70%;
+                right: 5%;
+            }
+            
+            .robot-voice {
+                bottom: 70px;
+                left: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .voice-popup {
+                bottom: 130px;
+                left: 10px;
+                width: calc(100vw - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .content-section, .quiz-section, .historical-section, .project-section, .career-section, .educational-game, .robot-demo {
+                padding: 20px 15px;
+            }
+            
+            .floating-robots {
+                width: 25%;
+            }
+            
+            .floating-robot {
+                font-size: 1rem;
+            }
+            
+            .robot-controls {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="arabic">
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <span class="logo-text" data-ar="أصدقائي الروبوتات" data-fr="Mes Amis les Robots">أصدقائي الروبوتات</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#intro" class="nav-link" data-ar="الرئيسية" data-fr="Accueil">الرئيسية</a></li>
+                <li><a href="#robot-history" class="nav-link" data-ar="لمحة من التاريخ" data-fr="Aperçu historique">لمحة من التاريخ</a></li>
+                <li><a href="#robot-types" class="nav-link" data-ar="أنواع الروبوتات" data-fr="Types de robots">أنواع الروبوتات</a></li>
+                <li><a href="#applications" class="nav-link" data-ar="مجالات الاستخدام" data-fr="Domaines d'utilisation">مجالات الاستخدام</a></li>
+                <li><a href="#try-yourself" class="nav-link" data-ar="جرّب بنفسك" data-fr="Essayez vous-même">جرّب بنفسك</a></li>
+                <li><a href="#did-you-know" class="nav-link" data-ar="هل تعلم؟" data-fr="Le saviez-vous?">هل تعلم؟</a></li>
+                <li><a href="#games" class="nav-link" data-ar="الألعاب التعليمية" data-fr="Jeux éducatifs">الألعاب التعليمية</a></li>
+                <li><a href="#quiz-section" class="nav-link" data-ar="اختبر معلوماتك" data-fr="Testez vos connaissances">اختبر معلوماتك</a></li>
+                <li class="controls">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ar">العربية</button>
+                        <button class="lang-btn" data-lang="fr">Français</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-robots">
+            <div class="floating-robot robot-1"><i class="fas fa-robot"></i></div>
+            <div class="floating-robot robot-2"><i class="fas fa-robot"></i></div>
+            <div class="floating-robot robot-3"><i class="fas fa-robot"></i></div>
+            <div class="floating-robot robot-4"><i class="fas fa-robot"></i></div>
+            <div class="floating-robot robot-5"><i class="fas fa-robot"></i></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <h1 data-ar="مرحباً بكم في عالم أصدقائي الروبوتات 🤖" data-fr="Bienvenue dans le monde de Mes Amis les Robots 🤖">مرحباً بكم في عالم أصدقائي الروبوتات 🤖</h1>
+                <p data-ar="في هذا الموقع ستتعرف على عالم الروبوتات، كيف تعمل، وأين نجدها في حياتنا اليومية! هيا بنا في رحلة تعليمية ممتعة!" data-fr="Sur ce site, vous découvrirez le monde des robots, comment ils fonctionnent et où nous les trouvons dans notre vie quotidienne! Venez faire un voyage éducatif amusant!">في هذا الموقع ستتعرف على عالم الروبوتات، كيف تعمل، وأين نجدها في حياتنا اليومية! هيا بنا في رحلة تعليمية ممتعة!</p>
+                <div class="hero-buttons">
+                    <a href="#intro" class="btn btn-primary" data-ar="ابدأ المغامرة" data-fr="Commencer l'aventure">ابدأ المغامرة</a>
+                    <a href="#robot-history" class="btn btn-secondary" data-ar="لمحة من التاريخ" data-fr="Aperçu historique">لمحة من التاريخ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Introduction Section -->
+        <section id="intro">
+            <h2 data-ar="الروبوتات في حياتنا" data-fr="Les robots dans notre vie">الروبوتات في حياتنا</h2>
+            
+            <div class="content-section" data-aos="fade-up">
+                <div class="intro-with-image">
+                    <div class="intro-text">
+                        <p data-ar="الروبوتات هي آلات ذكية يمكنها القيام بأعمال مفيدة لنا. بعضها يشبه البشر، والبعض الآخر له أشكال مختلفة. وهي لديها عقل إلكتروني (كمبيوتر) يخبرها ما تفعل، وأذرع تتحرك، وعيون إلكترونية ترى بها!" data-fr="Les robots sont des machines intelligentes qui peuvent effectuer des travaux utiles pour nous. Certains ressemblent à des humains, d'autres ont des formes différentes. Ils ont un cerveau électronique (ordinateur) qui leur dit quoi faire, des bras qui bougent et des yeux électroniques pour voir!">الروبوتات هي آلات ذكية يمكنها القيام بأعمال مفيدة لنا. بعضها يشبه البشر، والبعض الآخر له أشكال مختلفة. وهي لديها عقل إلكتروني (كمبيوتر) يخبرها ما تفعل، وأذرع تتحرك، وعيون إلكترونية ترى بها!</p>
+                        <p data-ar="وُجدت الروبوتات لتساعد البشر في الأعمال الصعبة أو الخطرة، وتجعل حياتنا أسهل وأكثر راحة! يمكن للروبوتات أن تعمل في أماكن يصعب على البشر الوصول إليها، أو تنفذ مهام متكررة بدقة عالية." data-fr="Les robots existent pour aider les humains dans les travaux difficiles ou dangereux, et pour rendre notre vie plus facile et plus confortable! Les robots peuvent travailler dans des endroits difficiles d'accès pour les humains ou effectuer des tâches répétitives avec une grande précision.">وُجدت الروبوتات لتساعد البشر في الأعمال الصعبة أو الخطرة، وتجعل حياتنا أسهل وأكثر راحة! يمكن للروبوتات أن تعمل في أماكن يصعب على البشر الوصول إليها، أو تنفذ مهام متكررة بدقة عالية.</p>
+                    </div>
+                    <div class="intro-image" data-aos="zoom-in">
+                        <img src="education.jpg" alt="روبوت" data-ar="روبوت تعليمي" data-fr="Robot éducatif">
+                    </div>
+                </div>
+                
+                <div class="info-cards">
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-robot"></i>
+                        <h3 data-ar="ما هي الروبوتات؟" data-fr="Que sont les robots?">ما هي الروبوتات؟</h3>
+                        <p data-ar="الروبوتات هي آلات ذكية يمكنها القيام بأعمال مفيدة لنا. بعضها يشبه البشر، والبعض الآخر له أشكال مختلفة." data-fr="Les robots sont des machines intelligentes qui peuvent effectuer des travaux utiles pour nous. Certains ressemblent à des humains, d'autres ont des formes différentes.">الروبوتات هي آلات ذكية يمكنها القيام بأعمال مفيدة لنا. بعضها يشبه البشر، والبعض الآخر له أشكال مختلفة.</p>
+                    </div>
+                    
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-cogs"></i>
+                        <h3 data-ar="كيف تعمل؟" data-fr="Comment fonctionnent-ils?">كيف تعمل؟</h3>
+                        <p data-ar="الروبوتات لديها عقل إلكتروني (كمبيوتر) يخبرها ما تفعل، وأذرع تتحرك، وعيون إلكترونية ترى بها!" data-fr="Les robots ont un cerveau électronique (ordinateur) qui leur dit quoi faire, des bras qui bougent et des yeux électroniques pour voir!">الروبوتات لديها عقل إلكتروني (كمبيوتر) يخبرها ما تفعل، وأذرع تتحرك، وعيون إلكترونية ترى بها!</p>
+                    </div>
+                    
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-history"></i>
+                        <h3 data-ar="لماذا وُجدت؟" data-fr="Pourquoi existent-ils?">لماذا وُجدت؟</h3>
+                        <p data-ar="وُجدت الروبوتات لتساعد البشر في الأعمال الصعبة أو الخطرة، وتجعل حياتنا أسهل وأكثر راحة!" data-fr="Les robots existent pour aider les humains dans les travaux difficiles ou dangereux, et pour rendre notre vie plus facile et plus confortable!">وُجدت الروبوتات لتساعد البشر في الأعمال الصعبة أو الخطرة، وتجعل حياتنا أسهل وأكثر راحة!</p>
+                    </div>
+                </div>
+                
+                <!-- New Section: What are robots and how do they work -->
+                <div class="robots-explained" data-aos="fade-up">
+                    <h3 data-ar="ما هي الروبوتات وكيف تعمل؟" data-fr="Que sont les robots et comment fonctionnent-ils?">ما هي الروبوتات وكيف تعمل؟</h3>
+                    <p data-ar="الروبوتات هي آلات ذكية يمكنها القيام بمهام معينة بناءً على برمجة مسبقة. دعنا نتعرف على مكوناتها الرئيسية وكيفية عملها!" data-fr="Les robots sont des machines intelligentes qui peuvent effectuer des tâches spécifiques basées sur une programmation préalable. Découvrons leurs composants principaux et leur fonctionnement!">الروبوتات هي آلات ذكية يمكنها القيام بمهام معينة بناءً على برمجة مسبقة. دعنا نتعرف على مكوناتها الرئيسية وكيفية عملها!</p>
+                    
+                    <div class="explanation-cards">
+                        <div class="explanation-card" data-aos="flip-left" data-aos-delay="100">
+                            <i class="fas fa-microchip"></i>
+                            <h4 data-ar="العقل الإلكتروني" data-fr="Cerveau électronique">العقل الإلكتروني</h4>
+                            <p data-ar="الروبوتات تحتوي على معالج أو كمبيوتر صغير يعمل كعقل لها، حيث يقوم بمعالجة المعلومات واتخاذ القرارات." data-fr="Les robots contiennent un processeur ou un petit ordinateur qui fonctionne comme leur cerveau, traitant les informations et prenant des décisions.">الروبوتات تحتوي على معالج أو كمبيوتر صغير يعمل كعقل لها، حيث يقوم بمعالجة المعلومات واتخاذ القرارات.</p>
+                        </div>
+                        
+                        <div class="explanation-card" data-aos="flip-left" data-aos-delay="200">
+                            <i class="fas fa-sensor"></i>
+                            <h4 data-ar="المستشعرات" data-fr="Capteurs">المستشعرات</h4>
+                            <p data-ar="تستخدم الروبوتات مستشعرات لجمع المعلومات من البيئة المحيطة، مثل الكاميرات للرؤية والميكروفونات للسمع." data-fr="Les robots utilisent des capteurs pour collecter des informations de l'environnement, tels que des caméras pour voir et des microphones pour entendre.">تستخدم الروبوتات مستشعرات لجمع المعلومات من البيئة المحيطة، مثل الكاميرات للرؤية والميكروفونات للسمع.</p>
+                        </div>
+                        
+                        <div class="explanation-card" data-aos="flip-left" data-aos-delay="300">
+                            <i class="fas fa-cogs"></i>
+                            <h4 data-ar="المحركات والأجزاء الميكانيكية" data-fr="Moteurs et pièces mécaniques">المحركات والأجزاء الميكانيكية</h4>
+                            <p data-ar="المحركات تتيح للروبوتات الحركة، بينما الأجزاء الميكانيكية مثل الأذرع والعجلات تساعدها على التفاعل مع البيئة." data-fr="Les moteurs permettent aux robots de bouger, tandis que les pièces mécaniques comme les bras et les roues les aident à interagir avec l'environnement.">المحركات تتيح للروبوتات الحركة، بينما الأجزاء الميكانيكية مثل الأذرع والعجلات تساعدها على التفاعل مع البيئة.</p>
+                        </div>
+                        
+                        <div class="explanation-card" data-aos="flip-left" data-aos-delay="400">
+                            <i class="fas fa-code"></i>
+                            <h4 data-ar="البرمجة" data-fr="Programmation">البرمجة</h4>
+                            <p data-ar="يتم برمجة الروبوتات بلغات خاصة لتحديد كيفية تفاعلها مع البيئة وإنجاز المهام المطلوبة منها." data-fr="Les robots sont programmés avec des langages spécifiques pour définir comment ils interagissent avec l'environnement et accomplissent les tâches requises.">يتم برمجة الروبوتات بلغات خاصة لتحديد كيفية تفاعلها مع البيئة وإنجاز المهام المطلوبة منها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Robot History Section -->
+        <section id="robot-history">
+            <h2 data-ar="لمحة من التاريخ" data-fr="Aperçu historique">لمحة من التاريخ</h2>
+            <div class="historical-section" data-aos="fade-up">
+                <p data-ar="منذ زمن بعيد جداً، كان الناس يحلمون بصنع آلات تتحرك وحدها. في البداية، كانت هناك ألعاب صغيرة تتحرك بالعجلات والزنبركات. ثم تطورت التكنولوجيا، وبدأ العلماء يصنعون روبوتات تستطيع المشي والتكلم وحتى التفكير قليلاً بفضل الحاسوب." data-fr="Il y a très longtemps, les gens rêvaient de fabriquer des machines qui bougent toutes seules. Au début, il y avait de petits jouets qui bougeaient avec des roues et des ressorts. Puis la technologie s'est développée et les scientifiques ont commencé à fabriquer des robots capables de marcher, de parler et même de penser un peu grâce à l'ordinateur.">منذ زمن بعيد جداً، كان الناس يحلمون بصنع آلات تتحرك وحدها. في البداية، كانت هناك ألعاب صغيرة تتحرك بالعجلات والزنبركات. ثم تطورت التكنولوجيا، وبدأ العلماء يصنعون روبوتات تستطيع المشي والتكلم وحتى التفكير قليلاً بفضل الحاسوب.</p>
+                
+                <div class="historical-timeline">
+                    <div class="historical-item" data-aos="fade-right">
+                        <div class="historical-image">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="historical-content">
+                            <h3 data-ar="البدايات الأولى" data-fr="Premiers débuts">البدايات الأولى</h3>
+                            <p data-ar="في العصور القديمة، صنع الإغريق آلات ميكانيكية تعمل بالماء والبخار. وكانت هذه الآلات تعتبر معجزة في عصرها، حيث كانت تتحرك وتؤدي مهام بسيطة دون تدخل بشري مباشر." data-fr="Dans les temps anciens, les Grecs fabriquaient des machines mécaniques fonctionnant à l'eau et à la vapeur. Ces machines étaient considérées comme des miracles à leur époque, car elles bougeaient et effectuaient des tâches simples sans intervention humaine directe.">في العصور القديمة، صنع الإغريق آلات ميكانيكية تعمل بالماء والبخار. وكانت هذه الآلات تعتبر معجزة في عصرها، حيث كانت تتحرك وتؤدي مهام بسيطة دون تدخل بشري مباشر.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="historical-item" data-aos="fade-left">
+                        <div class="historical-image">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="historical-content">
+                            <h3 data-ar="عصر النهضة" data-fr="Renaissance">عصر النهضة</h3>
+                            <p data-ar="في القرن الخامس عشر، صمم ليوناردو دافنشي أول إنسان آلي يمكنه الجلوس وتحريك ذراعيه وفكه. كانت هذه التصاميم تمثل بداية التفكير في الإنسان الآلي بشكله المعروف اليوم." data-fr="Au XVe siècle, Léonard de Vinci a conçu le premier humanoïde capable de s'asseoir, de bouger ses bras et sa mâchoire. Ces conceptions représentaient le début de la réflexion sur l'humanoïde sous la forme que nous connaissons aujourd'hui.">في القرن الخامس عشر، صمم ليوناردو دافنشي أول إنسان آلي يمكنه الجلوس وتحريك ذراعيه وفكه. كانت هذه التصاميم تمثل بداية التفكير في الإنسان الآلي بشكله المعروف اليوم.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="historical-item" data-aos="fade-right">
+                        <div class="historical-image">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="historical-content">
+                            <h3 data-ar="الثورة الصناعية" data-fr="Révolution industrielle">الثورة الصناعية</h3>
+                            <p data-ar="مع بداية الثورة الصناعية، ظهرت آلات أكثر تطوراً تعمل بالبخار والكهرباء. بدأت فكرة الروبوتات تتخذ شكلاً أكثر وضوحاً، خاصة في المصانع حيث استخدمت لأداء المهام المتكررة." data-fr="Avec le début de la révolution industrielle, des machines plus avancées fonctionnant à la vapeur et à l'électricité sont apparues. L'idée des robots a commencé à prendre une forme plus claire, en particulier dans les usines où ils étaient utilisés pour effectuer des tâches répétitives.">مع بداية الثورة الصناعية، ظهرت آلات أكثر تطوراً تعمل بالبخار والكهرباء. بدأت فكرة الروبوتات تتخذ شكلاً أكثر وضوحاً، خاصة في المصانع حيث استخدمت لأداء المهام المتكررة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="historical-item" data-aos="fade-left">
+                        <div class="historical-image">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="historical-content">
+                            <h3 data-ar="عصر الكمبيوتر" data-fr="Ère de l'ordinateur">عصر الكمبيوتر</h3>
+                            <p data-ar="مع اختراع الكمبيوتر في القرن العشرين، أصبحت الروبوتات أكثر ذكاءً. أصبح بإمكانها التفكير واتخاذ القرارات البسيطة، وبدأت تظهر في مجالات متعددة مثل الطب والفضاء والمنازل." data-fr="Avec l'invention de l'ordinateur au XXe siècle, les robots sont devenus plus intelligents. Ils pouvaient penser et prendre des décisions simples, et ont commencé à apparaître dans divers domaines tels que la médecine, l'espace et les maisons.">مع اختراع الكمبيوتر في القرن العشرين، أصبحت الروبوتات أكثر ذكاءً. أصبح بإمكانها التفكير واتخاذ القرارات البسيطة، وبدأت تظهر في مجالات متعددة مثل الطب والفضاء والمنازل.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="historical-item" data-aos="fade-right">
+                        <div class="historical-image">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="historical-content">
+                            <h3 data-ar="الروبوتات الحديثة" data-fr="Robots modernes">الروبوتات الحديثة</h3>
+                            <p data-ar="اليوم، أصبحت الروبوتات جزءاً لا يتجزأ من حياتنا. هناك روبوتات تساعد في العمليات الجراحية الدقيقة، وتنظيف المنازل، واستكشاف الفضاء، وحتى اللعب مع الأطفال والتعلم معهم." data-fr="Aujourd'hui, les robots font partie intégrante de notre vie. Il existe des robots qui aident lors de chirurgies délicates, nettoient les maisons, explorent l'espace et même jouent avec les enfants et apprennent avec eux.">اليوم، أصبحت الروبوتات جزءاً لا يتجزأ من حياتنا. هناك روبوتات تساعد في العمليات الجراحية الدقيقة، وتنظيف المنازل، واستكشاف الفضاء، وحتى اللعب مع الأطفال والتعلم معهم.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Robot Types Section -->
+<section id="robot-types">
+    <h2 data-ar="أنواع الروبوتات" data-fr="Types de robots">أنواع الروبوتات</h2>
+    <div class="content-section" data-aos="fade-up">
+        <p data-ar="هناك العديد من أنواع الروبوتات المختلفة، كل منها مصمم لأداء مهام محددة. دعنا نستكشف معاً!" data-fr="Il existe de nombreux types de robots différents, chacun conçu pour effectuer des tâches spécifiques. Explorons ensemble!">هناك العديد من أنواع الروبوتات المختلفة، كل منها مصمم لأداء مهام محددة. دعنا نستكشف معاً!</p>
+        
+        <div class="robot-types">
+            <div class="robot-type" data-aos="zoom-in" data-aos-delay="100">
+                <div class="robot-image">
+                    <img src="usine.jpg" alt="Robot industriel" onerror="this.src='https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <h4 data-ar="روبوت صناعي" data-fr="Robot industriel">روبوت صناعي</h4>
+                <p data-ar="روبوت يعمل في المصانع لتصنيع المنتجات المختلفة" data-fr="Robot qui travaille dans les usines pour fabriquer différents produits">روبوت يعمل في المصانع لتصنيع المنتجات المختلفة</p>
+            </div>
+            
+            <div class="robot-type" data-aos="zoom-in" data-aos-delay="200">
+                <div class="robot-image">
+                    <img src="maison.jpg" alt="Robot domestique" onerror="this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <h4 data-ar="روبوت منزلي" data-fr="Robot domestique">روبوت منزلي</h4>
+                <p data-ar="روبوت يساعد في الأعمال المنزلية مثل التنظيف والترتيب" data-fr="Robot qui aide dans les tâches ménagères comme le nettoyage et le rangement">روبوت يساعد في الأعمال المنزلية مثل التنظيف والترتيب</p>
+            </div>
+            
+            <div class="robot-type" data-aos="zoom-in" data-aos-delay="300">
+                <div class="robot-image">
+                    <img src="intellegent.png" alt="Robot éducatif" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <h4 data-ar="روبوت تعليمي" data-fr="Robot éducatif">روبوت تعليمي</h4>
+                <p data-ar="روبوت مصمم خصوصاً لمساعدة الأطفال في التعلم واللعب" data-fr="Robot spécialement conçu pour aider les enfants à apprendre et jouer">روبوت مصمم خصوصاً لمساعدة الأطفال في التعلم واللعب</p>
+            </div>
+
+            <div class="robot-type" data-aos="zoom-in" data-aos-delay="400">
+                <div class="robot-image">
+                    <img src="med.png" alt="Robot médical" onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <h4 data-ar="روبوت طبي" data-fr="Robot médical">روبوت طبي</h4>
+                <p data-ar="روبوت يساعد الأطباء في العمليات الجراحية والعناية بالمرضى" data-fr="Robot qui aide les médecins lors d'opérations chirurgicales et de soins aux patients">روبوت يساعد الأطباء في العمليات الجراحية والعناية بالمرضى</p>
+            </div>
+
+            <div class="robot-type" data-aos="zoom-in" data-aos-delay="500">
+                <div class="robot-image">
+                    <img src="WhatsApp Image 2025-11-07 à 16.01.41_eff70008.jpg" alt="Robot spatial" onerror="this.src='https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <h4 data-ar="روبوت فضائي" data-fr="Robot spatial">روبوت فضائي</h4>
+                <p data-ar="روبوت يستكشف الكواكب والفضاء حيث لا يستطيع البشر الوصول" data-fr="Robot qui explore les planètes et l'espace là où les humains ne peuvent pas aller">روبوت يستكشف الكواكب والفضاء حيث لا يستطيع البشر الوصول</p>
+            </div>
+
+            <div class="robot-type" data-aos="zoom-in" data-aos-delay="600">
+                <div class="robot-image">
+                    <img src="mmm.jpg" alt="Robot à roues" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
+                </div>
+                <h4 data-ar="روبوت بعجلات" data-fr="Robot à roues">روبوت بعجلات</h4>
+                <p data-ar="روبوت يتحرك على عجلات، مثالي للتنقل على الأسطح المستوية" data-fr="Robot qui se déplace sur des roues, idéal pour naviguer sur des surfaces planes">روبوت يتحرك على عجلات، مثالي للتنقل على الأسطح المستوية</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Try Yourself Section -->
+        <section id="try-yourself">
+            <h2 data-ar="جرّب بنفسك: اصنع روبوتاً بسيطاً" data-fr="Essayez vous-même: Fabriquez un robot simple">جرّب بنفسك: اصنع روبوتاً بسيطاً</h2>
+            <div class="project-section" data-aos="fade-up">
+                <p data-ar="هيا نصنع معاً روبوتاً بسيطاً يتحرك بعجلات! هذا المشروع سهل وآمن، ويمكنك صنعه في المنزل بمساعدة شخص بالغ." data-fr="Fabriquons ensemble un robot simple qui se déplace sur des roues! Ce projet est facile et sûr, et vous pouvez le fabriquer à la maison avec l'aide d'un adulte.">هيا نصنع معاً روبوتاً بسيطاً يتحرك بعجلات! هذا المشروع سهل وآمن، ويمكنك صنعه في المنزل بمساعدة شخص بالغ.</p>
+                
+                <h3 data-ar="الأدوات والمواد المطلوبة" data-fr="Outils et matériaux nécessaires">الأدوات والمواد المطلوبة</h3>
+                
+                <div class="project-steps">
+                    <div class="project-step" data-aos="fade-right">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4 data-ar="علبة كرتون صغيرة" data-fr="Petite boîte en carton">علبة كرتون صغيرة</h4>
+                            <p data-ar="ستكون جسم الروبوت" data-fr="Sera le corps du robot">ستكون جسم الروبوت</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4 data-ar="4 أغطية زجاجات بلاستيكية" data-fr="4 bouchons de bouteilles en plastique">4 أغطية زجاجات بلاستيكية</h4>
+                            <p data-ar="ستكون عجلات الروبوت" data-fr="Seront les roues du robot">ستكون عجلات الروبوت</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-right" data-aos-delay="200">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4 data-ar="محرك صغير (من لعبة قديمة)" data-fr="Petit moteur (d'un vieux jouet)">محرك صغير (من لعبة قديمة)</h4>
+                            <p data-ar="سيجعل الروبوت يتحرك" data-fr="Fera bouger le robot">سيجعل الروبوت يتحرك</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-left" data-aos-delay="200">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4 data-ar="أسلاك وبطارية" data-fr="Fils et pile">أسلاك وبطارية</h4>
+                            <p data-ar="لتشغيل المحرك" data-fr="Pour alimenter le moteur">لتشغيل المحرك</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-left" data-aos-delay="100">
+                        <div class="step-number">5</div>
+                        <div>
+                            <h4 data-ar="ألوان وملصقات" data-fr="Couleurs et autocollants">ألوان وملصقات</h4>
+                            <p data-ar="للتزيين وإضفاء الطابع الشخصي" data-fr="Pour la décoration et la personnalisation">للتزيين وإضفاء الطابع الشخصي</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-left">
+                        <div class="step-number">6</div>
+                        <div>
+                            <h4 data-ar="أدوات بسيطة" data-fr="Outils simples">أدوات بسيطة</h4>
+                            <p data-ar="مقص، غراء، مسامير صغيرة" data-fr="Ciseaux, colle, petites vis">مقص، غراء، مسامير صغيرة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 40px;" data-ar="خطوات الصنع" data-fr="Étapes de fabrication">خطوات الصنع</h3>
+                
+                <div class="project-steps">
+                    <div class="project-step" data-aos="fade-right">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4 data-ar="اصنع الجسم" data-fr="Fabriquez le corps">اصنع الجسم</h4>
+                            <p data-ar="قص العلبة الكرتونية لتصبح بشكل مربع أو مستطيل، هذا سيكون جسم الروبوت." data-fr="Découpez la boîte en carton pour qu'elle soit carrée ou rectangulaire, ce sera le corps du robot.">قص العلبة الكرتونية لتصبح بشكل مربع أو مستطيل، هذا سيكون جسم الروبوت.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4 data-ar="أضف العجلات" data-fr="Ajoutez les roues">أضف العجلات</h4>
+                        <p data-ar="ثبت الأغطية البلاستيكية على جوانب العلبة باستخدام المسامير أو الغراء القوي." data-fr="Fixez les bouchons en plastique sur les côtés de la boîte à l'aide de clous ou de colle forte.">ثبت الأغطية البلاستيكية على جوانب العلبة باستخدام المسامير أو الغراء القوي.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-right" data-aos-delay="200">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4 data-ar="اربط المحرك" data-fr="Connectez le moteur">اربط المحرك</h4>
+                            <p data-ar="ثبت المحرك داخل العلبة واربطه بأحد المحاور (المسامير) التي تدير العجلات." data-fr="Fixez le moteur à l'intérieur de la boîte et connectez-le à l'un des axes (clous) qui font tourner les roues.">ثبت المحرك داخل العلبة واربطه بأحد المحاور (المسامير) التي تدير العجلات.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-left" data-aos-delay="200">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4 data-ar="أضف الطاقة" data-fr="Ajoutez l'alimentation">أضف الطاقة</h4>
+                            <p data-ar="اربط الأسلاك بين المحرك والبطارية، مع وجود مفتاح للتحكم بتشغيل وإيقاف الروبوت." data-fr="Connectez les fils entre le moteur et la pile, avec un interrupteur pour contrôler l'allumage et l'arrêt du robot.">اربط الأسلاك بين المحرك والبطارية، مع وجود مفتاح للتحكم بتشغيل وإيقاف الروبوت.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-left" data-aos-delay="100">
+                        <div class="step-number">5</div>
+                        <div>
+                            <h4 data-ar="زيّن الروبوت" data-fr="Décorez le robot">زيّن الروبوت</h4>
+                            <p data-ar="استخدم الألوان والملصقات لجعل روبوتك جميلاً وفريداً من نوعه!" data-fr="Utilisez des couleurs et des autocollants pour rendre votre robot beau et unique!">استخدم الألوان والملصقات لجعل روبوتك جميلاً وفريداً من نوعه!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-step" data-aos="fade-left">
+                        <div class="step-number">6</div>
+                        <div>
+                            <h4 data-ar="اختبر الروبوت" data-fr="Testez le robot">اختبر الروبوت</h4>
+                            <p data-ar="شغّل الروبوت وشاهد كيف يتحرك! يمكنك تعديله وتحسينه لجعله أفضل." data-fr="Allumez le robot et regardez comment il bouge! Vous pouvez le modifier et l'améliorer pour le rendre meilleur.">شغّل الروبوت وشاهد كيف يتحرك! يمكنك تعديله وتحسينه لجعله أفضل.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenge-buttons" style="margin-top: 40px;">
+                    <button class="btn btn-primary" id="project-tips-btn" data-ar="نصائح إضافية" data-fr="Conseils supplémentaires">نصائح إضافية</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Did You Know Section -->
+        <section id="did-you-know">
+            <h2 data-ar="هل تعلم؟" data-fr="Le saviez-vous?">هل تعلم؟</h2>
+            <div class="content-section" data-aos="fade-up">
+                <p data-ar="معلومات مثيرة وغريبة عن عالم الروبوتات!" data-fr="Des informations excitantes et étranges sur le monde des robots!">معلومات مثيرة وغريبة عن عالم الروبوتات!</p>
+                
+                <div class="fun-facts">
+                    <div class="fun-fact" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-rocket"></i>
+                        <h4 data-ar="أول روبوت في الفضاء" data-fr="Premier robot dans l'espace">أول روبوت في الفضاء</h4>
+                        <p data-ar="أول روبوت في الفضاء كان اسمه 'Robonaut' وأرسلته ناسا إلى محطة الفضاء الدولية." data-fr="Le premier robot dans l'espace s'appelait 'Robonaut' et a été envoyé par la NASA à la Station spatiale internationale.">أول روبوت في الفضاء كان اسمه 'Robonaut' وأرسلته ناسا إلى محطة الفضاء الدولية.</p>
+                    </div>
+                    
+                    <div class="fun-fact" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4 data-ar="روبوتات تتعلم من أخطائها" data-fr="Robots qui apprennent de leurs erreurs">روبوتات تتعلم من أخطائها</h4>
+                        <p data-ar="بعض الروبوتات المتطورة يمكنها التعلم من أخطائها وتحسين أدائها مع الوقت، تماماً كما يفعل البشر!" data-fr="Certains robots avancés peuvent apprendre de leurs erreurs et améliorer leurs performances avec le temps, tout comme les humains!">بعض الروبوتات المتطورة يمكنها التعلم من أخطائها وتحسين أدائها مع الوقت، تماماً كما يفعل البشر!</p>
+                    </div>
+                    
+                    <div class="fun-fact" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-music"></i>
+                        <h4 data-ar="روبوتات تغني وترقص" data-fr="Robots qui chantent et dansent">روبوتات تغني وترقص</h4>
+                        <p data-ar="هناك روبوتات يمكنها الرقص والغناء والعزف على الآلات الموسيقية، وتقدم عروضاً مسرحية كاملة!" data-fr="Il existe des robots qui peuvent danser, chanter et jouer d'instruments de musique, et donner des spectacles complets!">هناك روبوتات يمكنها الرقص والغناء والعزف على الآلات الموسيقية، وتقدم عروضاً مسرحية كاملة!</p>
+                    </div>
+                    
+                    <div class="fun-fact" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fas fa-robot"></i>
+                        <h4 data-ar="روبوتات تشبه الحشرات" data-fr="Robots qui ressemblent à des insectes">روبوتات تشبه الحشرات</h4>
+                        <p data-ar="بعض العلماء يصنعون روبوتات صغيرة تشبه النمل أو النحل، يمكنها العمل معاً في مجموعات!" data-fr="Certains scientifiques fabriquent de petits robots qui ressemblent à des fourmis ou des abeilles, et peuvent travailler ensemble en groupes!">بعض العلماء يصنعون روبوتات صغيرة تشبه النمل أو النحل، يمكنها العمل معاً في مجموعات!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Games Section -->
+        <section id="games">
+            <h2 data-ar="الألعاب التعليمية" data-fr="Jeux éducatifs">الألعاب التعليمية</h2>
+            
+            <!-- Robot Assembly Game -->
+            <div class="educational-game" data-aos="fade-up">
+                <h3 data-ar="لعبة تجميع الروبوت" data-fr="Jeu d'assemblage de robot">لعبة تجميع الروبوت</h3>
+                <p data-ar="اسحب أجزاء الروبوت إلى المكان الصحيح لتركيب روبوت كامل! ستتعلم وظيفة كل جزء أثناء اللعب." data-fr="Faites glisser les parties du robot au bon endroit pour assembler un robot complet! Vous apprendrez la fonction de chaque partie en jouant.">اسحب أجزاء الروبوت إلى المكان الصحيح لتركيب روبوت كامل! ستتعلم وظيفة كل جزء أثناء اللعب.</p>
+                
+                <div class="educational-game-instructions">
+                    <h4 data-ar="كيف تلعب:" data-fr="Comment jouer:">كيف تلعب:</h4>
+                    <p data-ar="1. اسحب كل جزء من الروبوت إلى مكانه الصحيح في منطقة التجميع" data-fr="1. Faites glisser chaque partie du robot à sa place correcte dans la zone d'assemblage">1. اسحب كل جزء من الروبوت إلى مكانه الصحيح في منطقة التجميع</p>
+                    <p data-ar="2. ستظهر معلومات تعليمية عن كل جزء عندما تضعه في مكانه الصحيح" data-fr="2. Des informations éducatives sur chaque partie apparaîtront lorsque vous la placerez au bon endroit">2. ستظهر معلومات تعليمية عن كل جزء عندما تضعه في مكانه الصحيح</p>
+                    <p data-ar="3. عندما تكتمل جميع الأجزاء، ستحصل على روبوت كامل!" data-fr="3. Lorsque toutes les parties sont complètes, vous obtiendrez un robot complet!">3. عندما تكتمل جميع الأجزاء، ستحصل على روبوت كامل!</p>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="parts-placed">0</div>
+                        <div data-ar="الأجزاء المثبتة" data-fr="Pièces placées">الأجزاء المثبتة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-parts">6</div>
+                        <div data-ar="إجمالي الأجزاء" data-fr="Total des pièces">إجمالي الأجزاء</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress" id="assembly-progress"></div>
+                </div>
+                
+                <div class="robot-parts-game">
+                    <div class="parts-container">
+                        <div class="robot-part" draggable="true" data-part="head">
+                            <i class="fas fa-robot"></i>
+                            <p data-ar="الرأس" data-fr="Tête">الرأس</p>
+                        </div>
+                        <div class="robot-part" draggable="true" data-part="body">
+                            <i class="fas fa-square"></i>
+                            <p data-ar="الجسم" data-fr="Corps">الجسم</p>
+                        </div>
+                        <div class="robot-part" draggable="true" data-part="arm-left">
+                            <i class="fas fa-hand-paper"></i>
+                            <p data-ar="الذراع الأيسر" data-fr="Bras gauche">الذراع الأيسر</p>
+                        </div>
+                        <div class="robot-part" draggable="true" data-part="arm-right">
+                            <i class="fas fa-hand-paper"></i>
+                            <p data-ar="الذراع الأيمن" data-fr="Bras droit">الذراع الأيمن</p>
+                        </div>
+                        <div class="robot-part" draggable="true" data-part="leg-left">
+                            <i class="fas fa-shoe-prints"></i>
+                            <p data-ar="الرجل اليسرى" data-fr="Jambe gauche">الرجل اليسرى</p>
+                        </div>
+                        <div class="robot-part" draggable="true" data-part="leg-right">
+                            <i class="fas fa-shoe-prints"></i>
+                            <p data-ar="الرجل اليمنى" data-fr="Jambe droite">الرجل اليمنى</p>
+                        </div>
+                    </div>
+                    
+                    <div class="robot-assembly" id="robot-assembly">
+                        <div class="robot-assembly-grid">
+                            <div class="robot-slot" data-slot="head">
+                                <i class="fas fa-question"></i>
+                                <span class="slot-label" data-ar="الرأس" data-fr="Tête">الرأس</span>
+                            </div>
+                            <div class="robot-slot" data-slot="body">
+                                <i class="fas fa-question"></i>
+                                <span class="slot-label" data-ar="الجسم" data-fr="Corps">الجسم</span>
+                            </div>
+                            <div class="robot-slot" data-slot="arm-left">
+                                <i class="fas fa-question"></i>
+                                <span class="slot-label" data-ar="الذراع الأيسر" data-fr="Bras gauche">الذراع الأيسر</span>
+                            </div>
+                            <div class="robot-slot" data-slot="arm-right">
+                                <i class="fas fa-question"></i>
+                                <span class="slot-label" data-ar="الذراع الأيمن" data-fr="Bras droit">الذراع الأيمن</span>
+                            </div>
+                            <div class="robot-slot" data-slot="leg-left">
+                                <i class="fas fa-question"></i>
+                                <span class="slot-label" data-ar="الرجل اليسرى" data-fr="Jambe gauche">الرجل اليسرى</span>
+                            </div>
+                            <div class="robot-slot" data-slot="leg-right">
+                                <i class="fas fa-question"></i>
+                                <span class="slot-label" data-ar="الرجل اليمنى" data-fr="Jambe droite">الرجل اليمنى</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="robot-part-info" id="robot-part-info">
+                    <h4 id="part-info-title" data-ar="معلومات عن جزء الروبوت" data-fr="Informations sur la partie du robot">معلومات عن جزء الروبوت</h4>
+                    <p id="part-info-text" data-ar="هنا ستظهر معلومات تعليمية عن جزء الروبوت الذي قمت بتثبيته." data-fr="Des informations éducatives sur la partie du robot que vous avez installée apparaîtront ici.">هنا ستظهر معلومات تعليمية عن جزء الروبوت الذي قمت بتثبيته.</p>
+                </div>
+                
+                <div class="robot-final" id="robot-final" style="display: none;">
+                    <h3 data-ar="مبروك! لقد ركبت الروبوت بنجاح!" data-fr="Félicitations! Vous avez assemblé le robot avec succès!">مبروك! لقد ركبت الروبوت بنجاح!</h3>
+                    <div id="robot-final-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/10/02/05/tiles-2617112_1280.png" alt="روبوت كامل" style="max-width: 300px; max-height: 300px;">
+                        <p data-ar="هذا هو الروبوت الذي قمت بتجميعه! رائع!" data-fr="Voici le robot que vous avez assemblé! Magnifique!">هذا هو الروبوت الذي قمت بتجميعه! رائع!</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-buttons" style="margin-top: 20px;">
+                    <button class="btn btn-accent" id="reset-robot-btn" data-ar="إعادة البدء" data-fr="Recommencer">إعادة البدء</button>
+                    <button class="btn btn-primary" id="check-robot-btn" data-ar="تحقق" data-fr="Vérifier">تحقق</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section">
+            <h2 data-ar="اختبر معلوماتك عن الروبوتات" data-fr="Testez vos connaissances sur les robots">اختبر معلوماتك عن الروبوتات</h2>
+            <div class="content-section" data-aos="fade-up">
+                <p data-ar="اختبر معلوماتك عن الروبوتات من خلال هذا الاختبار الممتع! اختر الإجابة الصحيحة لكل سؤال وشاهد نتائجك في النهاية." data-fr="Testez vos connaissances sur les robots avec ce quiz amusant! Choisissez la bonne réponse pour chaque question et voyez vos résultats à la fin.">اختبر معلوماتك عن الروبوتات من خلال هذا الاختبار الممتع! اختر الإجابة الصحيحة لكل سؤال وشاهد نتائجك في النهاية.</p>
+                
+                <div class="quiz-instructions">
+                    <h4 data-ar="كيفية اللعب:" data-fr="Comment jouer:">كيفية اللعب:</h4>
+                    <p data-ar="1. اقرأ كل سؤال بعناية" data-fr="1. Lisez chaque question attentivement">1. اقرأ كل سؤال بعناية</p>
+                    <p data-ar="2. اختر الإجابة الصحيحة من بين الخيارات" data-fr="2. Choisissez la bonne réponse parmi les options">2. اختر الإجابة الصحيحة من بين الخيارات</p>
+                    <p data-ar="3. اضغط على زر 'التالي' للمتابعة" data-fr="3. Cliquez sur le bouton 'Suivant' pour continuer">3. اضغط على زر 'التالي' للمتابعة</p>
+                    <p data-ar="4. في النهاية، سترى نتيجتك الكاملة" data-fr="4. À la fin, vous verrez votre score complet">4. في النهاية، سترى نتيجتك الكاملة</p>
+                </div>
+                
+                <div class="question-counter" id="question-counter" data-ar="السؤال 1 من 10" data-fr="Question 1 sur 10">السؤال 1 من 10</div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question" id="quiz-question">
+                        <!-- سيتم ملء السؤال هنا باستخدام JavaScript -->
+                    </div>
+                    
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- سيتم ملء الخيارات هنا باستخدام JavaScript -->
+                    </div>
+                    
+                    <div class="quiz-feedback" id="quiz-feedback"></div>
+                    
+                    <div class="quiz-navigation">
+                        <button class="btn btn-secondary" id="prev-quiz-btn" data-ar="السابق" data-fr="Précédent">السابق</button>
+                        <button class="btn btn-primary" id="next-quiz-btn" data-ar="التالي" data-fr="Suivant">التالي</button>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-results" id="quiz-results">
+                        <div class="results-score" id="results-score">0/10</div>
+                        <div class="results-message" id="results-message" data-ar="نتيجتك: حاول مرة أخرى!" data-fr="Votre score: Essayez encore!">نتيجتك: حاول مرة أخرى!</div>
+                        <p data-ar="شارك نتيجتك مع أصدقائك وتحداهم!" data-fr="Partagez votre score avec vos amis et défiez-les!">شارك نتيجتك مع أصدقائك وتحداهم!</p>
+                        <button class="btn btn-primary" id="restart-quiz-btn" data-ar="إعادة الاختبار" data-fr="Recommencer le quiz">إعادة الاختبار</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo" data-ar="أصدقائي الروبوتات" data-fr="Mes Amis les Robots">أصدقائي الروبوتات</div>
+                    <p data-ar="منصة تعليمية ممتعة للأطفال لاستكشاف عالم الروبوتات والتكنولوجيا بطريقة آمنة ومفيدة." data-fr="Plateforme éducative amusante pour les enfants pour explorer le monde des robots et de la technologie de manière sûre et utile.">منصة تعليمية ممتعة للأطفال لاستكشاف عالم الروبوتات والتكنولوجيا بطريقة آمنة ومفيدة.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 data-ar="استكشف" data-fr="Explorer">استكشف</h3>
+                    <ul>
+                        <li><a href="#intro" data-ar="الرئيسية" data-fr="Accueil">الرئيسية</a></li>
+                        <li><a href="#robot-history" data-ar="لمحة من التاريخ" data-fr="Aperçu historique">لمحة من التاريخ</a></li>
+                        <li><a href="#robot-types" data-ar="أنواع الروبوتات" data-fr="Types de robots">أنواع الروبوتات</a></li>
+                        <li><a href="#applications" data-ar="مجالات الاستخدام" data-fr="Domaines d'utilisation">مجالات الاستخدام</a></li>
+                        <li><a href="#try-yourself" data-ar="جرّب بنفسك" data-fr="Essayez vous-même">جرّب بنفسك</a></li>
+                        <li><a href="#did-you-know" data-ar="هل تعلم؟" data-fr="Le saviez-vous?">هل تعلم؟</a></li>
+                        <li><a href="#games" data-ar="الألعاب التعليمية" data-fr="Jeux éducatifs">الألعاب التعليمية</a></li>
+                        <li><a href="#quiz-section" data-ar="اختبر معلوماتك" data-fr="Testez vos connaissances">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p style="line-height: 1;" data-ar="© 2025 أصدقائي الروبوتات - صمم خصيصاً لأطفالنا المبدعين" data-fr="© 2025 Mes Amis les Robots - Conçu spécialement pour nos enfants créatifs">© 2025 أصدقائي الروبوتات - صمم خصيصاً لأطفالنا المبدعين</p>
+                <p style="line-height: 0;">Ghizlane Elouakil</p>
+                <p style="line-height: 0;">la maison des sciences</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Robot Voice Assistant -->
+    <div class="robot-voice" id="robot-voice">
+        <i class="fas fa-robot"></i>
+    </div>
+    
+    <div class="voice-popup" id="voice-popup">
+        <div class="voice-message" id="voice-message" data-ar="مرحباً! أنا روبي، روبوت المساعدة. كيف يمكنني مساعدتك اليوم؟" data-fr="Bonjour! Je suis Roby, le robot d'assistance. Comment puis-je vous aider aujourd'hui?">مرحباً! أنا روبي، روبوت المساعدة. كيف يمكنني مساعدتك اليوم؟</div>
+        <div class="voice-options">
+            <div class="voice-option" data-action="games" data-ar="أريد اللعب" data-fr="Je veux jouer">أريد اللعب</div>
+            <div class="voice-option" data-action="quiz" data-ar="أريد اختبار معلوماتي" data-fr="Je veux tester mes connaissances">أريد اختبار معلوماتي</div>
+            <div class="voice-option" data-action="project" data-ar="أريد صنع روبوت" data-fr="Je veux fabriquer un robot">أريد صنع روبوت</div>
+            <div class="voice-option" data-action="close" data-ar="إغلاق" data-fr="Fermer">إغلاق</div>
+        </div>
+    </div>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all features
+            initNavigation();
+            initLanguageSwitcher();
+            initScrollAnimations();
+            initEducationalGames();
+            initQuiz();
+            initBackToTop();
+            initProjectTips();
+            initRobotVoice();
+            initMovingRobot();
+            initRobotDemo();
+            initRobotsGallery();
+        });
+
+        // Navigation
+        function initNavigation() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    // Change icon
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                        mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                    });
+                });
+            }
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Language Switcher
+        function initLanguageSwitcher() {
+            let currentLang = 'ar';
+            
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('language');
+            if (savedLang) {
+                currentLang = savedLang;
+                switchLanguage(currentLang);
+                
+                // Update active button
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    if (btn.getAttribute('data-lang') === currentLang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Add click events to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    
+                    // Update active buttons
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Switch language function
+            function switchLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('language', lang);
+                
+                // Change body class for direction
+                document.body.classList.remove('arabic', 'french');
+                if (lang === 'ar') {
+                    document.body.classList.add('arabic');
+                } else {
+                    document.body.classList.add('french');
+                }
+                
+                // Update all texts based on selected language
+                document.querySelectorAll('[data-ar], [data-fr]').forEach(element => {
+                    if (lang === 'ar') {
+                        if (element.hasAttribute('data-ar')) {
+                            element.textContent = element.getAttribute('data-ar');
+                        }
+                    } else {
+                        if (element.hasAttribute('data-fr')) {
+                            element.textContent = element.getAttribute('data-fr');
+                        }
+                    }
+                });
+            }
+        }
+
+        // Scroll Animations
+        function initScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => observer.observe(el));
+        }
+
+        // Educational Games
+        function initEducationalGames() {
+            // Robot Assembly Game
+            const robotParts = document.querySelectorAll('.robot-part');
+            const robotSlots = document.querySelectorAll('.robot-slot');
+            const resetRobotBtn = document.getElementById('reset-robot-btn');
+            const checkRobotBtn = document.getElementById('check-robot-btn');
+            const robotFinal = document.getElementById('robot-final');
+            const robotPartInfo = document.getElementById('robot-part-info');
+            const partInfoTitle = document.getElementById('part-info-title');
+            const partInfoText = document.getElementById('part-info-text');
+            const partsPlacedElement = document.getElementById('parts-placed');
+            const assemblyProgress = document.getElementById('assembly-progress');
+            
+            let assembledParts = {};
+            let partsPlaced = 0;
+            const totalParts = 6;
+            
+            // معلومات تعليمية عن أجزاء الروبوت
+            const partInfo = {
+                'head': {
+                    ar: {
+                        title: 'رأس الروبوت',
+                        text: 'رأس الروبوت يحتوي على أجهزة الاستشعار مثل الكاميرات والميكروفونات التي تسمح للروبوت بالرؤية والسمع. بعض الروبوتات لديها شاشات تعرض المعلومات أو تعابير الوجه!'
+                    },
+                    fr: {
+                        title: 'Tête du robot',
+                        text: 'La tête du robot contient des capteurs tels que des caméras et des microphones qui permettent au robot de voir et d\'entendre. Certains robots ont des écrans qui affichent des informations ou des expressions faciales!'
+                    }
+                },
+                'body': {
+                    ar: {
+                        title: 'جسم الروبوت',
+                        text: 'جسم الروبوت يحتوي على العقل الإلكتروني (المعالج) والبطارية التي تزود الروبوت بالطاقة. إنه مركز التحكم في الروبوت حيث تتم معالجة المعلومات واتخاذ القرارات!'
+                    },
+                    fr: {
+                        title: 'Corps du robot',
+                        text: 'Le corps du robot contient le cerveau électronique (processeur) et la batterie qui alimente le robot. C\'est le centre de contrôle du robot où les informations sont traitées et les décisions sont prises!'
+                    }
+                },
+                'arm-left': {
+                    ar: {
+                        title: 'الذراع الأيسر',
+                        text: 'الذراع الأيسر للروبوت يستخدم للتفاعل مع البيئة. يمكنه التقاط الأشياء، التحريك، أو أداء مهام دقيقة. بعض الأذرع الروبوتية قوية جداً ويمكنها رفع أوزان ثقيلة!'
+                    },
+                    fr: {
+                        title: 'Bras gauche',
+                        text: 'Le bras gauche du robot est utilisé pour interagir avec l\'environnement. Il peut saisir des objets, bouger ou effectuer des tâches délicates. Certains bras robotiques sont très puissants et peuvent soulever des poids lourds!'
+                    }
+                },
+                'arm-right': {
+                    ar: {
+                        title: 'الذراع الأيمن',
+                        text: 'الذراع الأيمن للروبوت يعمل بالتنسيق مع الذراع الأيسر لأداء مهام معقدة. يمكن للروبوتات ذات الذراعين التعامل مع الأشياء بدقة شديدة، تماماً كما يفعل البشر!'
+                    },
+                    fr: {
+                        title: 'Bras droit',
+                        text: 'Le bras droit du robot fonctionne en coordination avec le bras gauche pour effectuer des tâches complexes. Les robots à deux bras peuvent manipuler des objets avec une grande précision, tout comme les humains!'
+                    }
+                },
+                'leg-left': {
+                    ar: {
+                        title: 'الرجل اليسرى',
+                        text: 'الرجل اليسرى تساعد الروبوت على الحركة والتوازن. بعض الروبوتات لديها أرجل مع مفاصل متعددة تسمح لها بالمشي، الجري، أو حتى القفز!'
+                    },
+                    fr: {
+                        title: 'Jambe gauche',
+                        text: 'La jambe gauche aide le robot à se déplacer et à équilibrer. Certains robots ont des jambes avec plusieurs articulations qui leur permettent de marcher, courir ou même sauter!'
+                    }
+                },
+                'leg-right': {
+                    ar: {
+                        title: 'الرجل اليمنى',
+                        text: 'الرجل اليمنى تعمل مع الرجل اليسرى لتوفير الاستقرار والحركة. الروبوتات ذات الأرجل يمكنها التنقل في التضاريس المختلفة مثل السلالم والأراضي غير المستوية!'
+                    },
+                    fr: {
+                        title: 'Jambe droite',
+                        text: 'La jambe droite fonctionne avec la jambe gauche pour fournir stabilité et mouvement. Les robots avec des jambes peuvent naviguer sur différents terrains comme les escaliers et les surfaces irrégulières!'
+                    }
+                }
+            };
+            
+            // تحديث شريط التقدم
+            function updateProgress() {
+                const progressPercentage = (partsPlaced / totalParts) * 100;
+                assemblyProgress.style.width = `${progressPercentage}%`;
+                partsPlacedElement.textContent = partsPlaced;
+            }
+            
+            // إظهار معلومات الجزء
+            function showPartInfo(partType) {
+                const currentLang = localStorage.getItem('language') || 'ar';
+                const info = partInfo[partType][currentLang];
+                
+                partInfoTitle.textContent = info.title;
+                partInfoText.textContent = info.text;
+                robotPartInfo.classList.add('show');
+                
+                // إبراز الجزء الذي تم وضعه
+                const partElement = document.querySelector(`.robot-part[data-part="${partType}"]`);
+                partElement.classList.add('highlight');
+                setTimeout(() => {
+                    partElement.classList.remove('highlight');
+                }, 1000);
+            }
+            
+            // Add drag events to robot parts
+            robotParts.forEach(part => {
+                part.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.getAttribute('data-part'));
+                });
+            });
+            
+            // Add drop events to robot slots
+            robotSlots.forEach(slot => {
+                slot.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = 'rgba(167, 212, 137, 0.3)';
+                });
+                
+                slot.addEventListener('dragleave', function() {
+                    this.style.backgroundColor = '';
+                });
+                
+                slot.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '';
+                    
+                    const partType = e.dataTransfer.getData('text/plain');
+                    const slotType = this.getAttribute('data-slot');
+                    
+                    if (partType === slotType && !assembledParts[partType]) {
+                        // Clear the slot
+                        this.innerHTML = '';
+                        
+                        // Add the part to the slot
+                        const originalPart = document.querySelector(`.robot-part[data-part="${partType}"]`);
+                        const clonedPart = originalPart.cloneNode(true);
+                        clonedPart.style.cursor = 'default';
+                        clonedPart.style.margin = '0';
+                        clonedPart.style.transform = 'none';
+                        clonedPart.draggable = false;
+                        
+                        this.appendChild(clonedPart);
+                        this.classList.add('filled');
+                        
+                        // Mark as assembled
+                        assembledParts[partType] = true;
+                        partsPlaced++;
+                        updateProgress();
+                        
+                        // Disable the original part
+                        originalPart.style.opacity = '0.5';
+                        originalPart.style.cursor = 'not-allowed';
+                        originalPart.draggable = false;
+                        
+                        // Show educational information about the part
+                        showPartInfo(partType);
+                    } else if (partType !== slotType) {
+                        // Part in wrong slot - provide feedback
+                        const currentLang = localStorage.getItem('language') || 'ar';
+                        if (currentLang === 'ar') {
+                            alert('هذا الجزء لا ينتمي إلى هذا المكان! حاول مرة أخرى.');
+                        } else {
+                            alert('Cette pièce ne va pas ici! Essayez encore.');
+                        }
+                        
+                        // Highlight the correct slot
+                        const correctSlot = document.querySelector(`.robot-slot[data-slot="${partType}"]`);
+                        correctSlot.classList.add('highlight');
+                        setTimeout(() => {
+                            correctSlot.classList.remove('highlight');
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // Reset robot assembly
+            resetRobotBtn.addEventListener('click', function() {
+                robotSlots.forEach(slot => {
+                    slot.innerHTML = '<i class="fas fa-question"></i><span class="slot-label" data-ar="' + slot.getAttribute('data-slot') + '" data-fr="' + slot.getAttribute('data-slot') + '">' + slot.getAttribute('data-slot') + '</span>';
+                    slot.classList.remove('filled');
+                    
+                    // Update text based on current language
+                    const currentLang = localStorage.getItem('language') || 'ar';
+                    const textElement = slot.querySelector('.slot-label');
+                    if (currentLang === 'ar') {
+                        textElement.textContent = slot.getAttribute('data-ar');
+                    } else {
+                        textElement.textContent = slot.getAttribute('data-fr');
+                    }
+                });
+                
+                assembledParts = {};
+                partsPlaced = 0;
+                updateProgress();
+                robotFinal.style.display = 'none';
+                robotPartInfo.classList.remove('show');
+                
+                // Re-enable all parts
+                robotParts.forEach(part => {
+                    part.style.opacity = '1';
+                    part.style.cursor = 'grab';
+                    part.draggable = true;
+                });
+            });
+            
+            // Check robot assembly
+            checkRobotBtn.addEventListener('click', function() {
+                const partTypes = ['head', 'body', 'arm-left', 'arm-right', 'leg-left', 'leg-right'];
+                const allAssembled = partTypes.every(part => assembledParts[part]);
+                
+                if (allAssembled) {
+                    robotFinal.style.display = 'flex';
+                    
+                    // Display the complete robot image
+                    document.getElementById('robot-final-image').innerHTML = `
+                        <img src="https://cdn.pixabay.com/photo/2017/08/10/02/05/tiles-2617112_1280.png" alt="روبوت كامل" style="max-width: 300px; max-height: 300px;">
+                        <p data-ar="هذا هو الروبوت الذي قمت بتجميعه! رائع!" data-fr="Voici le robot que vous avez assemblé! Magnifique!">هذا هو الروبوت الذي قمت بتجميعه! رائع!</p>
+                    `;
+                    
+                    // Update text based on current language
+                    const currentLang = localStorage.getItem('language') || 'ar';
+                    const textElement = document.querySelector('#robot-final-image p');
+                    if (currentLang === 'ar') {
+                        textElement.textContent = 'هذا هو الروبوت الذي قمت بتجميعه! رائع!';
+                    } else {
+                        textElement.textContent = 'Voici le robot que vous avez assemblé! Magnifique!';
+                    }
+                    
+                    if (currentLang === 'ar') {
+                        alert('أحسنت! لقد ركبت الروبوت بنجاح!');
+                    } else {
+                        alert('Bravo! Vous avez assemblé le robot avec succès!');
+                    }
+                } else {
+                    const currentLang = localStorage.getItem('language') || 'ar';
+                    if (currentLang === 'ar') {
+                        alert('لم تكتمل جميع الأجزاء بعد. حاول مرة أخرى!');
+                    } else {
+                        alert('Toutes les pièces ne sont pas encore complètes. Essayez encore!');
+                    }
+                }
+            });
+            
+            // Initialize progress
+            updateProgress();
+        }
+
+        // Quiz
+        function initQuiz() {
+            const quizQuestion = document.getElementById('quiz-question');
+            const quizOptions = document.getElementById('quiz-options');
+            const quizFeedback = document.getElementById('quiz-feedback');
+            const nextQuizBtn = document.getElementById('next-quiz-btn');
+            const prevQuizBtn = document.getElementById('prev-quiz-btn');
+            const quizResults = document.getElementById('quiz-results');
+            const resultsScore = document.getElementById('results-score');
+            const resultsMessage = document.getElementById('results-message');
+            const restartQuizBtn = document.getElementById('restart-quiz-btn');
+            const questionCounter = document.getElementById('question-counter');
+            const quizProgress = document.getElementById('quiz-progress');
+            
+            let currentQuestion = 0;
+            let userAnswers = [];
+            let score = 0;
+            
+            // بيانات الأسئلة
+            const quizData = [
+    {
+        question: {
+            ar: "ما هو الفرق بين الإنسان الآلي (Robot) والآلة العادية؟",
+            fr: "Quelle est la différence entre un robot et une machine ordinaire ?"
+        },
+        options: {
+            ar: [
+                "الروبوت يمكنه اتخاذ قرارات بناءً على برمجته",
+                "الروبوت يعمل فقط بزر التشغيل",
+                "الروبوت لا يحتوي على أي برمجة",
+                "الروبوت يعمل بالطاقة الشمسية فقط"
+            ],
+            fr: [
+                "Un robot peut prendre des décisions grâce à sa programmation",
+                "Un robot fonctionne seulement avec un bouton ON/OFF",
+                "Un robot n’a aucune programmation",
+                "Un robot fonctionne uniquement à l’énergie solaire"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "أي من هذه المجالات يستخدم الروبوتات لتحسين الدقة وتقليل الأخطاء؟",
+            fr: "Quel domaine utilise les robots pour améliorer la précision et réduire les erreurs ?"
+        },
+        options: {
+            ar: [
+                "الطب والجراحة",
+                "الرسم والفنون",
+                "الطبخ المنزلي",
+                "قيادة الدراجات"
+            ],
+            fr: [
+                "La médecine et la chirurgie",
+                "Le dessin et les arts",
+                "La cuisine maison",
+                "La conduite de vélos"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "ما هو المستشعر الذي يساعد الروبوت على قياس المسافة؟",
+            fr: "Quel capteur aide le robot à mesurer la distance ?"
+        },
+        options: {
+            ar: [
+                "مستشعر فوق صوتي",
+                "مستشعر حرارة",
+                "مستشعر ضوء",
+                "مستشعر صوت"
+            ],
+            fr: [
+                "Un capteur ultrason",
+                "Un capteur de température",
+                "Un capteur de lumière",
+                "Un microphone"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "ما هو دور المحرك (Motor) في الروبوت؟",
+            fr: "Quel est le rôle du moteur dans un robot ?"
+        },
+        options: {
+            ar: [
+                "تحريك أجزاء الروبوت",
+                "تخزين الطاقة",
+                "جمع البيانات",
+                "حل المعادلات"
+            ],
+            fr: [
+                "Déplacer les parties du robot",
+                "Stocker l'énergie",
+                "Collecter des données",
+                "Résoudre des équations"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "أي من اللغات التالية تُستعمل كثيراً في الذكاء الاصطناعي والروبوتات؟",
+            fr: "Quel langage est souvent utilisé en intelligence artificielle et robotique ?"
+        },
+        options: {
+            ar: [
+                "بايثون",
+                "HTML",
+                "CSS",
+                "اللغة الإسبانية"
+            ],
+            fr: [
+                "Python",
+                "HTML",
+                "CSS",
+                "L'espagnol"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "ما هو معنى تعلم الآلة (Machine Learning)؟",
+            fr: "Que signifie l'apprentissage automatique (Machine Learning) ?"
+        },
+        options: {
+            ar: [
+                "قدرة الروبوت على التعلم من البيانات وتحسين نفسه",
+                "قدرة الروبوت على الطيران",
+                "قدرة الروبوت على تحويل نفسه إلى آلة أخرى",
+                "قدرة الروبوت على العمل بدون بطارية"
+            ],
+            fr: [
+                "La capacité du robot à apprendre à partir de données et à s'améliorer",
+                "La capacité du robot à voler",
+                "La capacité du robot à se transformer en une autre machine",
+                "La capacité du robot à fonctionner sans batterie"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "في الروبوتات، ماذا يعني مصطلح الذكاء الاصطناعي (AI)؟",
+            fr: "En robotique, que signifie le terme intelligence artificielle (IA) ?"
+        },
+        options: {
+            ar: [
+                "قدرة الآلة على التفكير واتخاذ قرارات بسيطة",
+                "قدرة الآلة على إصلاح نفسها",
+                "قدرة الآلة على النوم",
+                "قدرة الآلة على الشحن بالطبيعة"
+            ],
+            fr: [
+                "La capacité d'une machine à réfléchir et prendre des décisions simples",
+                "La capacité d'une machine à se réparer seule",
+                "La capacité d'une machine à dormir",
+                "La capacité d'une machine à se recharger dans la nature"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "أي من الروبوتات التالية يستخدم للتعليم والبرمجة للمبتدئين؟",
+            fr: "Quel robot est utilisé pour l’apprentissage et l’initiation à la programmation ?"
+        },
+        options: {
+            ar: [
+                "روبوت ليغو Mindstorms",
+                "روبوتات المصانع الثقيلة",
+                "روبوتات الفضاء",
+                "روبوتات الجراحة"
+            ],
+            fr: [
+                "Le robot Lego Mindstorms",
+                "Les robots industriels lourds",
+                "Les robots spatiaux",
+                "Les robots chirurgicaux"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "ما هو السبب الرئيسي لاستخدام الروبوتات في المصانع؟",
+            fr: "Quelle est la raison principale d’utiliser des robots dans les usines ?"
+        },
+        options: {
+            ar: [
+                "السرعة والدقة",
+                "الرسم والزخرفة",
+                "التواصل مع العملاء",
+                "الاستراحة الطويلة"
+            ],
+            fr: [
+                "La rapidité et la précision",
+                "Le dessin et la décoration",
+                "La communication avec les clients",
+                "Les longues pauses"
+            ]
+        },
+        correctAnswer: 1
+    },
+
+    {
+        question: {
+            ar: "أي من هذه الروبوتات صُمّم لاستكشاف الكواكب؟",
+            fr: "Quel robot a été conçu pour explorer les planètes ?"
+        },
+        options: {
+            ar: [
+                "الروبوت كوريوسيتي (Curiosity)",
+                "روبوت تنظيف المنزل",
+                "روبوت المطبخ",
+                "روبوت الملاعب"
+            ],
+            fr: [
+                "Le robot Curiosity",
+                "Un robot de nettoyage domestique",
+                "Un robot de cuisine",
+                "Un robot de terrain de sport"
+            ]
+        },
+        correctAnswer: 1
+    }
+];
+
+            
+            // تحديث السؤال الحالي
+            function updateQuestion() {
+                const data = quizData[currentQuestion];
+                const currentLang = localStorage.getItem('language') || 'ar';
+                
+                // تحديث عداد الأسئلة
+                questionCounter.textContent = currentLang === 'ar' ? 
+                    `السؤال ${currentQuestion + 1} من ${quizData.length}` : 
+                    `Question ${currentQuestion + 1} sur ${quizData.length}`;
+                
+                // تحديث شريط التقدم
+                const progressPercentage = ((currentQuestion) / quizData.length) * 100;
+                quizProgress.style.width = `${progressPercentage}%`;
+                
+                // تحديث السؤال
+                quizQuestion.innerHTML = `<h3>${data.question[currentLang]}</h3>`;
+                
+                // تحديث الخيارات
+                quizOptions.innerHTML = '';
+                data.options[currentLang].forEach((option, index) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'quiz-option';
+                    optionElement.textContent = option;
+                    optionElement.dataset.index = index + 1;
+                    
+                    // التحقق مما إذا كان المستخدم قد أجاب على هذا السؤال مسبقاً
+                    if (userAnswers[currentQuestion] === index + 1) {
+                        optionElement.classList.add('selected');
+                        
+                        // إظهار ما إذا كانت الإجابة صحيحة أم خاطئة
+                        if (index + 1 === data.correctAnswer) {
+                            optionElement.classList.add('correct');
+                        } else {
+                            optionElement.classList.add('incorrect');
+                        }
+                    }
+                    
+                    optionElement.addEventListener('click', handleOptionClick);
+                    quizOptions.appendChild(optionElement);
+                });
+                
+                // تحديث زر السابق
+                if (currentQuestion === 0) {
+                    prevQuizBtn.style.visibility = 'hidden';
+                } else {
+                    prevQuizBtn.style.visibility = 'visible';
+                }
+                
+                // تحديث زر التالي
+                if (currentQuestion === quizData.length - 1) {
+                    nextQuizBtn.textContent = currentLang === 'ar' ? 'إنهاء' : 'Terminer';
+                } else {
+                    nextQuizBtn.textContent = currentLang === 'ar' ? 'التالي' : 'Suivant';
+                }
+                
+                // إخفاء التغذية الراجعة
+                quizFeedback.style.display = 'none';
+            }
+            
+            // التعامل مع النقر على الخيار
+            function handleOptionClick() {
+                // إذا كان المستخدم قد أجاب على هذا السؤال بالفعل، لا تفعل شيئاً
+                if (userAnswers[currentQuestion]) return;
+                
+                // إزالة التحديد من جميع الخيارات
+                const allOptions = document.querySelectorAll('.quiz-option');
+                allOptions.forEach(option => option.classList.remove('selected'));
+                
+                // تحديد الخيار الحالي
+                this.classList.add('selected');
+                
+                // حفظ إجابة المستخدم
+                const selectedAnswer = parseInt(this.dataset.index);
+                userAnswers[currentQuestion] = selectedAnswer;
+                
+                // التحقق من الإجابة
+                const data = quizData[currentQuestion];
+                const isCorrect = (selectedAnswer === data.correctAnswer);
+                
+                // إظهار التغذية الراجعة
+                const currentLang = localStorage.getItem('language') || 'ar';
+                quizFeedback.textContent = isCorrect ? 
+                    (currentLang === 'ar' ? 'إجابة صحيحة! أحسنت!' : 'Bonne réponse! Bien joué!') :
+                    (currentLang === 'ar' ? 'إجابة خاطئة. حاول مرة أخرى في السؤال القادم!' : 'Mauvaise réponse. Essayez encore à la prochaine question!');
+                
+                quizFeedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+                quizFeedback.style.display = 'block';
+                
+                // إذا كانت الإجابة صحيحة، زيادة النتيجة
+                if (isCorrect) {
+                    score++;
+                }
+                
+                // إظهار الإجابات الصحيحة والخاطئة
+                allOptions.forEach(option => {
+                    const optionIndex = parseInt(option.dataset.index);
+                    if (optionIndex === data.correctAnswer) {
+                        option.classList.add('correct');
+                    } else if (optionIndex === selectedAnswer && !isCorrect) {
+                        option.classList.add('incorrect');
+                    }
+                });
+            }
+            
+            // التالي
+            nextQuizBtn.addEventListener('click', function() {
+                if (currentQuestion < quizData.length - 1) {
+                    currentQuestion++;
+                    updateQuestion();
+                } else {
+                    // Quiz completed
+                    showResults();
+                }
+            });
+            
+            // السابق
+            prevQuizBtn.addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    updateQuestion();
+                }
+            });
+            
+            // إظهار النتائج
+            function showResults() {
+                const currentLang = localStorage.getItem('language') || 'ar';
+                
+                // تحديث النتيجة
+                resultsScore.textContent = `${score}/${quizData.length}`;
+                
+                // تحديث الرسالة بناءً على النتيجة
+                let message = '';
+                if (score === quizData.length) {
+                    message = currentLang === 'ar' ? 'ممتاز! أنت خبير في الروبوتات!' : 'Excellent! Vous êtes un expert en robots!';
+                } else if (score >= quizData.length * 0.7) {
+                    message = currentLang === 'ar' ? 'جيد جداً! معرفتك عن الروبوتات ممتازة!' : 'Très bien! Votre connaissance des robots est excellente!';
+                } else if (score >= quizData.length * 0.5) {
+                    message = currentLang === 'ar' ? 'جيد! لديك معرفة جيدة عن الروبوتات!' : 'Bien! Vous avez une bonne connaissance des robots!';
+                } else {
+                    message = currentLang === 'ar' ? 'حاول مرة أخرى! يمكنك التعلم أكثر عن الروبوتات!' : 'Essayez encore! Vous pouvez en apprendre plus sur les robots!';
+                }
+                
+                resultsMessage.textContent = message;
+                
+                // إظهار النتائج وإخفاء الأسئلة
+                document.querySelector('.quiz-container > div:not(.quiz-results)').style.display = 'none';
+                quizResults.style.display = 'block';
+                
+                // تحديث شريط التقدم إلى 100%
+                quizProgress.style.width = '100%';
+            }
+            
+            // إعادة الاختبار
+            restartQuizBtn.addEventListener('click', function() {
+                currentQuestion = 0;
+                userAnswers = [];
+                score = 0;
+                
+                // إعادة تعيين الواجهة
+                document.querySelector('.quiz-container > div:not(.quiz-results)').style.display = 'block';
+                quizResults.style.display = 'none';
+                
+                updateQuestion();
+            });
+            
+            // Initialize quiz
+            updateQuestion();
+        }
+
+        // Back to top button
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Project tips
+        function initProjectTips() {
+            const projectTipsBtn = document.getElementById('project-tips-btn');
+            
+            if (projectTipsBtn) {
+                projectTipsBtn.addEventListener('click', function() {
+                    const currentLang = localStorage.getItem('language') || 'ar';
+                    const tips = currentLang === 'ar' ? 
+                        "نصائح إضافية:\n- اطلب مساعدة شخص بالغ عند استخدام الأدوات الحادة\n- تأكد من أن البطارية من النوع المناسب للمحرك\n- يمكنك إضافة مصابيح LED لجعل الروبوت أكثر إثارة\n- جرب تصميمات مختلفة لعجلات الروبوت" :
+                        "Conseils supplémentaires:\n- Demandez l'aide d'un adulte lorsque vous utilisez des outils tranchants\n- Assurez-vous que la pile est du type approprié pour le moteur\n- Vous pouvez ajouter des LED pour rendre le robot plus excitant\n- Essayez différentes conceptions pour les roues du robot";
+                    
+                    alert(tips);
+                });
+            }
+        }
+
+        // Robot Voice Assistant
+        function initRobotVoice() {
+            const robotVoice = document.getElementById('robot-voice');
+            const voicePopup = document.getElementById('voice-popup');
+            const voiceMessage = document.getElementById('voice-message');
+            const voiceOptions = document.querySelectorAll('.voice-option');
+            
+            let isPopupOpen = false;
+            
+            // Toggle voice popup
+            robotVoice.addEventListener('click', function() {
+                isPopupOpen = !isPopupOpen;
+                
+                if (isPopupOpen) {
+                    voicePopup.classList.add('show');
+                    
+                    // Update message based on current language
+                    const currentLang = localStorage.getItem('language') || 'ar';
+                    if (currentLang === 'ar') {
+                        voiceMessage.textContent = 'مرحباً! أنا روبي، روبوت المساعدة. كيف يمكنني مساعدتك اليوم؟';
+                    } else {
+                        voiceMessage.textContent = 'Bonjour! Je suis Roby, le robot d\'assistance. Comment puis-je vous aider aujourd\'hui?';
+                    }
+                    
+                    // Update options text
+                    voiceOptions.forEach(option => {
+                        const currentLang = localStorage.getItem('language') || 'ar';
+                        if (currentLang === 'ar') {
+                            option.textContent = option.getAttribute('data-ar');
+                        } else {
+                            option.textContent = option.getAttribute('data-fr');
+                        }
+                    });
+                } else {
+                    voicePopup.classList.remove('show');
+                }
+            });
+            
+            // Handle voice options
+            voiceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    
+                    switch(action) {
+                        case 'games':
+                            window.location.href = '#games';
+                            break;
+                        case 'quiz':
+                            window.location.href = '#quiz-section';
+                            break;
+                        case 'project':
+                            window.location.href = '#try-yourself';
+                            break;
+                        case 'close':
+                            // Do nothing, just close
+                            break;
+                    }
+                    
+                    voicePopup.classList.remove('show');
+                    isPopupOpen = false;
+                });
+            });
+        }
+
+        // Moving Robot Animation
+        function initMovingRobot() {
+            const heroRobot = document.querySelector('.hero-robot');
+            
+            if (heroRobot) {
+                // Add a more dynamic animation to the hero robot
+                heroRobot.style.animation = 'robot-move 8s ease-in-out infinite, float 6s ease-in-out infinite';
+                
+                // Add interaction on hover
+                heroRobot.addEventListener('mouseenter', function() {
+                    this.style.animation = 'robot-move 4s ease-in-out infinite, float 3s ease-in-out infinite';
+                });
+                
+                heroRobot.addEventListener('mouseleave', function() {
+                    this.style.animation = 'robot-move 8s ease-in-out infinite, float 6s ease-in-out infinite';
+                });
+            }
+        }
+
+        // Robot Demo
+        function initRobotDemo() {
+            const controlBtns = document.querySelectorAll('.control-btn');
+            const robotVisual = document.getElementById('robot-visual');
+            const robotIcon = document.getElementById('robot-icon');
+            const robotStatus = document.getElementById('robot-status');
+            
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    const currentLang = localStorage.getItem('language') || 'ar';
+                    
+                    // Reset animation
+                    robotVisual.style.animation = 'none';
+                    void robotVisual.offsetWidth; // Trigger reflow
+                    
+                    switch(action) {
+                        case 'move-forward':
+                            robotVisual.style.animation = 'moveForward 1s ease-in-out';
+                            robotStatus.textContent = currentLang === 'ar' ? 'الروبوت يتحرك للأمام!' : 'Le robot avance!';
+                            break;
+                        case 'move-backward':
+                            robotVisual.style.animation = 'moveBackward 1s ease-in-out';
+                            robotStatus.textContent = currentLang === 'ar' ? 'الروبوت يتراجع للخلف!' : 'Le robot recule!';
+                            break;
+                        case 'turn-left':
+                            robotVisual.style.animation = 'turnLeft 1s ease-in-out';
+                            robotStatus.textContent = currentLang === 'ar' ? 'الروبوت يستدير لليسار!' : 'Le robot tourne à gauche!';
+                            break;
+                        case 'turn-right':
+                            robotVisual.style.animation = 'turnRight 1s ease-in-out';
+                            robotStatus.textContent = currentLang === 'ar' ? 'الروبوت يستدير لليمين!' : 'Le robot tourne à droite!';
+                            break;
+                        case 'speak':
+                            robotVisual.style.animation = 'speak 1s ease-in-out';
+                            robotStatus.textContent = currentLang === 'ar' ? 'الروبوت يتحدث: مرحباً!' : 'Le robot parle: Bonjour!';
+                            break;
+                        case 'dance':
+                            robotVisual.style.animation = 'dance 2s ease-in-out infinite';
+                            robotStatus.textContent = currentLang === 'ar' ? 'الروبوت يرقص!' : 'Le robot danse!';
+                            break;
+                    }
+                    
+                    // Add animation keyframes dynamically
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes moveForward {
+                            0% { transform: translateY(0); }
+                            50% { transform: translateY(-20px); }
+                            100% { transform: translateY(0); }
+                        }
+                        @keyframes moveBackward {
+                            0% { transform: translateY(0); }
+                            50% { transform: translateY(20px); }
+                            100% { transform: translateY(0); }
+                        }
+                        @keyframes turnLeft {
+                            0% { transform: rotate(0deg); }
+                            50% { transform: rotate(-30deg); }
+                            100% { transform: rotate(0deg); }
+                        }
+                        @keyframes turnRight {
+                            0% { transform: rotate(0deg); }
+                            50% { transform: rotate(30deg); }
+                            100% { transform: rotate(0deg); }
+                        }
+                        @keyframes speak {
+                            0% { transform: scale(1); }
+                            25% { transform: scale(1.1); }
+                            50% { transform: scale(1); }
+                            75% { transform: scale(1.1); }
+                            100% { transform: scale(1); }
+                        }
+                        @keyframes dance {
+                            0% { transform: rotate(0deg) translateY(0); }
+                            25% { transform: rotate(10deg) translateY(-10px); }
+                            50% { transform: rotate(0deg) translateY(0); }
+                            75% { transform: rotate(-10deg) translateY(-10px); }
+                            100% { transform: rotate(0deg) translateY(0); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                });
+            });
+        }
+
+        // تهيئة معرض الصور
+        function initRobotsGallery() {
+            const imageUploads = document.querySelectorAll('.image-upload');
+            const resetGalleryBtn = document.getElementById('reset-gallery-btn');
+            
+            // تحميل الصور المحفوظة من localStorage
+            loadSavedImages();
+            
+            // إضافة أحداث لتحميل الصور
+            imageUploads.forEach(upload => {
+                upload.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const category = this.getAttribute('data-category');
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            const imageUrl = e.target.result;
+                            displayImage(category, imageUrl);
+                            saveImage(category, imageUrl);
+                        };
+                        
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+            
+            // إعادة تعيين الصور
+            resetGalleryBtn.addEventListener('click', function() {
+                const currentLang = localStorage.getItem('language') || 'ar';
+                const confirmMessage = currentLang === 'ar' ? 
+                    'هل أنت متأكد من أنك تريد إعادة تعيين جميع الصور؟' : 
+                    'Êtes-vous sûr de vouloir réinitialiser toutes les images?';
+                
+                if (confirm(confirmMessage)) {
+                    resetGallery();
+                }
+            });
+            
+            // عرض الصورة
+            function displayImage(category, imageUrl) {
+                const galleryItem = document.querySelector(`[data-category="${category}"]`);
+                const galleryImage = galleryItem.querySelector('.gallery-image');
+                
+                // إزالة العنصر النائب
+                const placeholder = galleryImage.querySelector('.image-placeholder');
+                if (placeholder) {
+                    placeholder.remove();
+                }
+                
+                // إضافة الصورة
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = category;
+                galleryImage.prepend(img);
+                
+                // إضافة تأثير ظهور
+                img.style.opacity = '0';
+                setTimeout(() => {
+                    img.style.opacity = '1';
+                    img.style.transition = 'opacity 0.5s ease';
+                }, 100);
+            }
+            
+            // حفظ الصورة في localStorage
+            function saveImage(category, imageUrl) {
+                const savedImages = JSON.parse(localStorage.getItem('robotsGalleryImages') || '{}');
+                savedImages[category] = imageUrl;
+                localStorage.setItem('robotsGalleryImages', JSON.stringify(savedImages));
+            }
+            
+            // تحميل الصور المحفوظة
+            function loadSavedImages() {
+                const savedImages = JSON.parse(localStorage.getItem('robotsGalleryImages') || '{}');
+                
+                Object.keys(savedImages).forEach(category => {
+                    displayImage(category, savedImages[category]);
+                });
+            }
+            
+            // إعادة تعيين المعرض
+            function resetGallery() {
+                // إزالة الصور من localStorage
+                localStorage.removeItem('robotsGalleryImages');
+                
+                // إعادة تحميل الصفحة لتحديث الواجهة
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
